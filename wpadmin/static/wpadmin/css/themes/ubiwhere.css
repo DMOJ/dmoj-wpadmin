@@ -1111,6 +1111,10 @@ table tbody .progress{
   width: 33%;
 }
 
+.module table > tbody > tr.row1, .module table > tbody > tr.row2 {
+  float: none;
+}
+
 .module table > tbody > tr > th {
   float: left;
   width: 100%;
