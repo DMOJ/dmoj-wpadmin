@@ -1,7 +1,7 @@
 {% load i18n wpadmin_menu_tags %}
 {% if is_user_allowed %}
 	<li class="wp-user-tools wp-menu-top wp-has-submenu wp-menu-not-open{% if is_first %} wp-first-item{% endif %}{% if is_last %} wp-last-item{% endif %}" {% if item.css_styles %}style="{{ item.css_styles }}"{% endif %}>
-		<div class="wp-menu-image"><a href="javascript:;"><img class="wp-small-gravatar" src="{% gravatar_url user.email 16 %}" width="16" height="16" /></a></div>
+		<div class="wp-menu-image"><a href="javascript:;"><img class="wp-small-gravatar" src="{% gravatar_url user.email 22 %}" width="16" height="16" /></a></div>
 		<a href="javascript:;">
 			{% trans 'Welcome,' %} <strong>{% firstof user.get_short_name user.get_username %}</strong>.
 		</a>

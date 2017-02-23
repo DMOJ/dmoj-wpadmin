@@ -1,5 +1,5 @@
 {% extends "admin/base_site.html" %}
-{% load i18n static %}
+{% load i18n static wpadmin_tags %}
 
 {% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}" />{% endblock %}
 
@@ -19,10 +19,11 @@
         <caption>
             <a href="{{ app.app_url }}" class="section" title="{% blocktrans with name=app.name %}Models in the {{ name }} application{% endblocktrans %}">{{ app.name }}</a>
         </caption>
+
         {% for model in app.models %}
             <tr class="model-{{ model.object_name|lower }}">
             {% if model.admin_url %}
-                <th scope="row"><a href="{{ model.admin_url }}">{{ model.name }}</a></th>
+                <th scope="row"><a href="{{ model.admin_url }}" class="fa {% wpadmin_get_model_icons model.object_name %}">{{ model.name }}</a></th>
             {% else %}
                 <th scope="row">{{ model.name }}</th>
             {% endif %}
@@ -42,6 +43,7 @@
         {% endfor %}
         </table>
         </div>
+      {% cycle '' '<div style="float:left;width:100%;height:1px;"></div>' %}
     {% endfor %}
 {% else %}
     <p>{% trans "You don't have permission to edit anything." %}</p>

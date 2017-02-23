@@ -41,3 +41,21 @@ def wpadmin_render_custom_title(context):
 
 register.simple_tag(takes_context=True)(wpadmin_render_custom_title)
 
+
+def wpadmin_get_model_icons(context, value):
+    import importlib
+
+    wpadmin_settings = get_wpadmin_settings(get_admin_site_name(context))
+
+    if wpadmin_settings.get('models_icons_mappings'):
+        module_name, dict_name = wpadmin_settings[
+            'models_icons_mappings'].rsplit(".", 1)
+        models_icons_mappings = getattr(
+            importlib.import_module(module_name), dict_name)
+
+        return models_icons_mappings.get(value, '')
+
+    return ''
+
+
+register.simple_tag(takes_context=True)(wpadmin_get_model_icons)
