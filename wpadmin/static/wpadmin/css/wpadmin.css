@@ -1246,7 +1246,9 @@ body.change-list #content h1 {
     margin: 0;
     padding: 6px 10px;
     list-style-type: none;
-    top: -4px
+    top: -4px;
+    overflow-y: auto;
+    max-height: 20em
 }
 
 #content #changelist #changelist-filter .filter ul li {
