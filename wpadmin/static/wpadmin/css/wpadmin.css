@@ -1373,9 +1373,7 @@ body.change-list #content h1 {
     border: 0;
     padding: 3px 10px !important;
     white-space: nowrap;
-    display: block;
-    float: left;
-    margin: 3px 0 0 3px
+    display: inline-block
 }
 
 #content #changelist .actions-and-paginator .paginator span.this-page.showall,
@@ -1388,9 +1386,7 @@ body.change-list #content h1 {
     font-style: italic;
     line-height: 28px;
     margin-left: 10px;
-    display: block;
-    margin-top: 3px;
-    float: left
+    display: inline-block
 }
 
 #content #changelist .actions-and-paginator.no-objects .paginator {
