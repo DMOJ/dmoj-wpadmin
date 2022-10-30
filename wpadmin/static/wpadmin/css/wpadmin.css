@@ -1,3 +1,87 @@
+/* Reset Django dark theme styles, because we don't support them:
+ * https://github.com/django/django/blob/stable/3.2.x/django/contrib/admin/static/admin/css/base.css#L8-L92
+ */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary: #79aec8;
+        --secondary: #417690;
+        --accent: #f5dd5d;
+        --primary-fg: #fff;
+
+        --body-fg: #333;
+        --body-bg: #fff;
+        --body-quiet-color: #666;
+        --body-loud-color: #000;
+
+        --header-color: #ffc;
+        --header-branding-color: var(--accent);
+        --header-bg: var(--secondary);
+        --header-link-color: var(--primary-fg);
+
+        --breadcrumbs-fg: #c4dce8;
+        --breadcrumbs-link-fg: var(--body-bg);
+        --breadcrumbs-bg: var(--primary);
+
+        --link-fg: #447e9b;
+        --link-hover-color: #036;
+        --link-selected-fg: #5b80b2;
+
+        --hairline-color: #e8e8e8;
+        --border-color: #ccc;
+
+        --error-fg: #ba2121;
+
+        --message-success-bg: #dfd;
+        --message-warning-bg: #ffc;
+        --message-error-bg: #ffefef;
+
+        --darkened-bg: #f8f8f8; /* A bit darker than --body-bg */
+        --selected-bg: #e4e4e4; /* E.g. selected table cells */
+        --selected-row: #ffc;
+
+        --button-fg: #fff;
+        --button-bg: var(--primary);
+        --button-hover-bg: #609ab6;
+        --default-button-bg: var(--secondary);
+        --default-button-hover-bg: #205067;
+        --close-button-bg: #888; /* Previously #bbb, contrast 1.92 */
+        --close-button-hover-bg: #747474;
+        --delete-button-bg: #ba2121;
+        --delete-button-hover-bg: #a41515;
+
+        --object-tools-fg: var(--button-fg);
+        --object-tools-bg: var(--close-button-bg);
+        --object-tools-hover-bg: var(--close-button-hover-bg);
+    }
+}
+
+/* Reset a bunch of base Django admin styles that conflict with wpadmin as of Django 3.2 */
+
+/* Changelist started being implemented with flexbox; reset back to `block` */
+#changelist {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+#changelist-filter {
+    margin: 0;
+}
+
+#changelist .actions {
+    width: unset;
+}
+
+.paginator {
+    width: unset;
+}
+
+div.breadcrumbs {
+    font-size: 14px;
+}
+
+/* Begin wpadmin styles */
+
 html {
     height: 100%;
     min-width: 360px
@@ -887,7 +971,8 @@ body.popup {
 .clockbox h2 {
     font-size: 13px;
     padding: 1px 20px 5px;
-    text-align: center
+    text-align: center;
+    background: white !important;
 }
 
 .calendarbox .calendar-cancel,
