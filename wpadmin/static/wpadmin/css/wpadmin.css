@@ -1826,6 +1826,10 @@ body.change-form #content-main {
     overflow-y: hidden
 }
 
+#content .inline-group .tabular.tab-martor-menu {
+    overflow-y: inherit
+}
+
 #content .inline-group .tabular tr.has_original td {
     padding-top: 2.2em
 }
