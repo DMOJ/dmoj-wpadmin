@@ -1,6 +1,6 @@
 from django import template
 from django.utils.safestring import mark_safe
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from wpadmin.utils import (
     get_admin_site_name, get_wpadmin_settings, are_breadcrumbs_enabled)
