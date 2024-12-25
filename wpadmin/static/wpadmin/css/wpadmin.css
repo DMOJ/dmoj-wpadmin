@@ -2138,3 +2138,11 @@ input[type="submit"] {
 #content table tbody td {
     border: none
 }
+
+.flex-container {
+    flex-flow: wrap;
+}
+
+.flex-container .main-martor {
+    flex: 100%;
+}
