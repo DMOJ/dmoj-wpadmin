@@ -2146,3 +2146,12 @@ input[type="submit"] {
 .flex-container .main-martor {
     flex: 100%;
 }
+
+.flex-container .related-widget-wrapper {
+    flex: 100%;
+}
+
+#id_allowed_languages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 150px);
+}
