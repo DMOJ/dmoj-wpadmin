@@ -2147,7 +2147,7 @@ input[type="submit"] {
     flex: 100%;
 }
 
-.flex-container .related-widget-wrapper {
+.field-allowed_languages .related-widget-wrapper {
     flex: 100%;
 }
 
